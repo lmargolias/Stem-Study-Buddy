@@ -1,0 +1,32 @@
+:root{--accent:#BA0C2F;--bg:#f7f7f8;--card:#fff;--text:#1d1d22;--muted:#6b6b76;--line:#e2e2e8;--user:#BA0C2F;--userText:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#16161a;--card:#222228;--text:#eee;--muted:#a0a0ab;--line:#33333b}}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{display:flex;flex-direction:column;max-width:760px;margin:0 auto;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 16px;border-bottom:3px solid var(--accent);background:var(--card)}
+.brand{display:flex;gap:10px;align-items:center}
+.emoji{font-size:2rem}
+h1{margin:0;font-size:1.15rem}
+header p{margin:0;font-size:.85rem;color:var(--muted)}
+.actions{display:flex;gap:6px}
+button{font:inherit;border:0;border-radius:10px;padding:8px 14px;background:var(--accent);color:#fff;cursor:pointer}
+button.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+button:disabled{opacity:.5;cursor:default}
+button:focus-visible,textarea:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+main{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:85%;padding:10px 14px;border-radius:16px;background:var(--card);border:1px solid var(--line);overflow-wrap:anywhere}
+.msg.user{align-self:flex-end;background:var(--user);color:var(--userText);border-color:var(--user)}
+.msg.error{border-color:var(--accent);color:var(--accent)}
+.msg ul{margin:6px 0;padding-left:20px}
+.msg p{margin:0 0 6px}.msg p:last-child{margin:0}
+.dots span{display:inline-block;width:8px;height:8px;margin-right:4px;border-radius:50%;background:var(--muted);animation:b 1s infinite}
+.dots span:nth-child(2){animation-delay:.15s}.dots span:nth-child(3){animation-delay:.3s}
+@keyframes b{0%,80%,100%{opacity:.3}40%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.dots span{animation:none}}
+#starters{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 8px}
+#starters button{background:var(--card);color:var(--accent);border:1px solid var(--accent);font-size:.9rem}
+footer{display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--line);background:var(--card)}
+textarea{flex:1;resize:none;max-height:120px;font:inherit;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--text)}
+dialog{border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--text);max-width:420px;width:90%}
+dialog input[type=password]{width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--text)}
+.row{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
