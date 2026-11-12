@@ -39,9 +39,34 @@ How to answer:
     "Quiz me on DNA replication!"
   ],
 
-  // Which Gemini model to use
-  model: "gemini-flash-latest",
+  // Which Gemini model writes the answers
+  model: "gemini-2.5-flash",
 
   // Main color (hex code)
-  themeColor: "#BA0C2F"
+  themeColor: "#BA0C2F",
+
+  // ==========================================================
+  //  KNOWLEDGE BASE (RAG)
+  //  Lets the bot look up your own notes before it answers.
+  // ==========================================================
+
+  // true = use your notes. false = turn the knowledge base off.
+  useKnowledge: true,
+
+  // The name of your notes file in the repository.
+  knowledgeFile: "knowledge.md",
+
+  // "meaning" = finds notes by meaning (best).
+  // "keywords" = finds notes by matching words (simple backup).
+  searchMethod: "meaning",
+
+  // How many of the best-matching notes to send with each question.
+  // Try 4 or 5 if the right note is often ranked below 3rd.
+  topK: 3,
+
+  // The Gemini model that turns text into embeddings (meaning numbers).
+  embeddingModel: "gemini-embedding-2",
+
+  // Extra rules added to the system instructions when notes are used.
+  knowledgeRules: `You will receive NOTES from my knowledge file along with each question. If the notes answer the question, base your answer on them and cite the note numbers like [1]. If they don't, begin with 'I couldn't find that in my notes.' Never invent facts, dates, rules or policies that are not in the notes.`
 };
