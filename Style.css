@@ -59,6 +59,15 @@ html, body {
 
 .top-buttons { display: flex; gap: 6px; flex-shrink: 0; }
 
+.kb-status {
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.kb-status:empty { display: none; }
+
 button {
   font: inherit;
   cursor: pointer;
@@ -126,6 +135,19 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
   .bubble.error { background: #3a1f1f; color: #ffb4b4; border-color: #6b2f2f; }
 }
 
+/* Sources section under each answer */
+.sources {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.sources summary { cursor: pointer; font-weight: 600; }
+.source-item { margin-top: 8px; }
+.source-item strong { color: var(--text); }
+.source-item p { margin: 2px 0 0; }
+
 .thinking { display: flex; gap: 5px; padding: 14px 16px; }
 .thinking span {
   width: 8px; height: 8px;
@@ -146,6 +168,7 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
   gap: 8px;
   padding: 0 16px 10px;
 }
+.starters[hidden] { display: none; }
 .starters button {
   background: transparent;
   color: var(--accent);
